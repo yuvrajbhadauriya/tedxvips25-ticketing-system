@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 import uuid # Import the library for generating random IDs
 
 class Submission(models.Model):
@@ -13,7 +14,7 @@ class Submission(models.Model):
     full_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
     transaction_id = models.CharField(max_length=255)
-    screenshot = models.ImageField(upload_to='screenshots/')
+    screenshot = CloudinaryField('screenshot', folder='tedx_screenshots/')
 
     # --- Admin and Status Tracking ---
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='pending')

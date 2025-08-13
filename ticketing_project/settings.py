@@ -1,12 +1,15 @@
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 SECRET_KEY = 'django-insecure-a-temporary-secret-key-for-local-dev'
-DEBUG = True
-ALLOWED_HOSTS = []
+DEBUG = False
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 # Application definition
 INSTALLED_APPS = [
@@ -19,6 +22,8 @@ INSTALLED_APPS = [
     # Third-party apps
     'rest_framework',
     'corsheaders',
+    'cloudinary_storage',
+    'cloudinary',
     # Your app
     'tickets',
 ]
@@ -91,3 +96,19 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'yuvraj.tedx@gmail.com'  # <-- REPLACE THIS with your full Gmail address
 EMAIL_HOST_PASSWORD = 'xiiohxweueoggohy' # This is your App Password (spaces removed)
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# --- NEW: Cloudinary Settings ---
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dtjupdqe8',  # Replace with your Cloudinary cloud name
+    'API_KEY': '554686883999818',        # Replace with your Cloudinary API key
+    'API_SECRET': 'OGlK3qpXbTPg1aXeiNgZR-Ta_cw',  # Replace with your Cloudinary API secret
+}
+
+cloudinary.config(
+    cloud_name=CLOUDINARY_STORAGE['db4fy2bfo'],
+    api_key=CLOUDINARY_STORAGE['334522794832312'],
+    api_secret=CLOUDINARY_STORAGE['7Z3yCsqbodKl2UoIy8PaPO0BANg']
+)
+
+# Use Cloudinary for media files
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'

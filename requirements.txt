@@ -1,0 +1,9 @@
+django
+djangorestframework
+django-cors-headers
+reportlab
+qrcode[pil]
+pdf2image
+pillow
+cloudinary
+django-cloudinary-storage
