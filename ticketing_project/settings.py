@@ -99,15 +99,15 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 # --- NEW: Cloudinary Settings ---
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dtjupdqe8',  # Replace with your Cloudinary cloud name
-    'API_KEY': '554686883999818',        # Replace with your Cloudinary API key
-    'API_SECRET': 'OGlK3qpXbTPg1aXeiNgZR-Ta_cw',  # Replace with your Cloudinary API secret
+    'CLOUD_NAME': 'b4fy2bfo',  # Replace with your Cloudinary cloud name
+    'API_KEY': '334522794832312',        # Replace with your Cloudinary API key
+    'API_SECRET': '7Z3yCsqbodKl2UoIy8PaPO0BANg',  # Replace with your Cloudinary API secret
 }
 
 cloudinary.config(
-    cloud_name=CLOUDINARY_STORAGE['db4fy2bfo'],
-    api_key=CLOUDINARY_STORAGE['334522794832312'],
-    api_secret=CLOUDINARY_STORAGE['7Z3yCsqbodKl2UoIy8PaPO0BANg']
+    cloud_name=CLOUDINARY_STORAGE['CLOUD_NAME'],
+    api_key=CLOUDINARY_STORAGE['API_KEY'],
+    api_secret=CLOUDINARY_STORAGE['API_SECRET']
 )
 
 # Use Cloudinary for media files
